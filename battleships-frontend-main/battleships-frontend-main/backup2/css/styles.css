@@ -250,7 +250,7 @@ button:active
 
 .grid-cell 
 {
-	vertical-align: top; /*clears the vertical space between rows*/
+	vertical-align: top; 
 	height: 40px;
 	width: 40px;
 	display: inline-block;
@@ -263,7 +263,7 @@ button:active
 
 .grid-cell:hover 
 {
-	cursor: pointer; /* Fallback for IE */
+	cursor: pointer; 
 	background-color: #66A3D2;
 }
 
@@ -294,7 +294,7 @@ button:active
 .grid-hit, .grid-hit:hover, .human-player .grid-hit:hover 
 {
 	background-color: #F60018;
-	background-image: url('../img/cross-icon.png'); /* Fallback */
+	background-image: url('../img/cross-icon.png'); 
 	background-image: url('../img/cross-icon.svg');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -307,7 +307,7 @@ button:active
 
 .highlight 
 {
-	overflow: visible; /* Bugfix for IE */
+	overflow: visible; 
 }
 
 .highlight:before 
