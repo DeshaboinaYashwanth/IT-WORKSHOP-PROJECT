@@ -43,10 +43,11 @@ button
 	border-radius: 5px;
 }
 
-	button:hover {
-		cursor: pointer;
-		background-color: #807d7d;
-	}
+button:hover 
+{
+	cursor: pointer;
+	background-color: #807d7d;
+}
 
 button:active 
 {
