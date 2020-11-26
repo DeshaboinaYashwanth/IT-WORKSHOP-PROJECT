@@ -20,10 +20,10 @@ a
 	font-weight: bold;
 }
 
-	a:hover 
-	{
-		text-decoration: none;
-	}
+a:hover 
+{
+	text-decoration: none;
+}
 
 div 
 {
@@ -42,39 +42,40 @@ button
 	padding: 10px;
 	border-radius: 5px;
 }
-	button:hover 
-	{
-		cursor: pointer;
-		background-color: #ffffff;
-	}
 
-	button:active 
-	{
-		background-color: #99C2E1;
-	}
+button:hover 
+{
+	cursor: pointer;
+	background-color: #ffffff;
+}
 
-	#start-game,
-	#place-randomly,
-	#restart-game 
-	{
-		position: relative;
-		color: #FFFFFF;
-		background-color: #FF9200;
-	}
+button:active 
+{
+	background-color: #99C2E1;
+}
 
-	#start-game:hover,
-	#place-randomly:hover,
-	#restart-game:hover 
-	{
-		background-color: #FFB655;
-	}
+#start-game,
+#place-randomly,
+#restart-game 
+{
+	position: relative;
+	color: #FFFFFF;
+	background-color: #FF9200;
+}
 
-	#start-game:active,
-	#place-randomly:active,
-	#restart-game:active 
-	{
-		background-color: #FFCE8E;
-	}
+#start-game:hover,
+#place-randomly:hover,
+#restart-game:hover 
+{
+	background-color: #FFB655;
+}
+
+#start-game:active,
+#place-randomly:active,
+#restart-game:active 
+{
+	background-color: #FFCE8E;
+}
 
 #prefetch1 
 {
@@ -101,13 +102,14 @@ button
 {
 	margin-bottom: 2em;
 }
-	.instructions 
-	{
-		width: auto;
-		display: inline-block;
-		text-align: left;
-		margin: 0 auto 3em auto;
-	}
+	
+.instructions 
+{
+	width: auto;
+	display: inline-block;
+	text-align: left;
+	margin: 0 auto 3em auto;
+}
 
 .container 
 {
@@ -115,23 +117,24 @@ button
 	text-align: center;
 	margin: 20px auto 100px auto;
 }
+
 .game-container 
 {
 	position: relative;
 }
 
-	#roster-sidebar, #stats-sidebar, #restart-sidebar 
-	{
-		width: 150px;
-		padding: 20px;
-		margin: 0;
-		background-color: #EEEEEE;
-		position: absolute;
-		top: 4.5em;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-	}
+#roster-sidebar, #stats-sidebar, #restart-sidebar 
+{
+	width: 150px;
+	padding: 20px;
+	margin: 0;
+	background-color: #EEEEEE;
+	position: absolute;
+	top: 4.5em;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
 
 	#roster-sidebar, #restart-sidebar 
 	{
