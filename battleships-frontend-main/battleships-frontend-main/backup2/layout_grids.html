@@ -1,0 +1,270 @@
+
+<html>
+<head>
+    <title>A Very Simple Battleship Game</title>
+    <link rel="stylesheet" type="text/css" href="/project/templates/style.css">
+    <style>
+        body {
+            margin: 60px auto;
+            width: 70%;
+            max-width: 950px;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+        }
+
+        p, button, input {
+            font-size: 1.5em;
+            line-height: 1.4em;
+            color: #333;
+            margin-bottom: 1em;
+        }
+
+        #alpha1 {
+            position: absolute;
+            top: 250px;
+            left: 150px;
+            margin: 0 auto 2em auto;
+            width: 500px;
+            height: 50px;
+            font-size: 32px;
+            letter-spacing:30px;
+        }
+
+            #alpha1 span{
+                padding-left:12px;
+            }
+
+        #num1 {
+            position: absolute;
+            top: 300px;
+            left: 90px;
+            margin: 0 auto 2em auto;
+            width: 40px;
+            height: 500px;
+            font-size: 32px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        #gameBoard1 {
+            position: absolute;
+            top: 300px;
+            left: 140px;
+            margin: 0 auto 2em auto;
+            width: 500px;
+            height: 500px;
+        }
+
+            #gameBoard1 div {
+                position: absolute;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                background: #f6f8f9;
+                border: 1px solid #ddd;
+                width: 50px;
+                height: 50px;
+            }
+
+        #alpha2 {
+            position: absolute;
+            top: 250px;
+            left: 760px;
+            margin: 0 auto 2em auto;
+            width: 500px;
+            height: 50px;
+            font-size: 32px;
+            letter-spacing: 30px;
+        }
+
+            #alpha2 span {
+                padding-left: 12px;
+            }
+
+        #num2 {
+            position: absolute;
+            top: 300px;
+            left: 700px;
+            margin: 0 auto 2em auto;
+            width: 40px;
+            height: 500px;
+            font-size: 32px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+
+
+        #gameBoard2 {
+            position: absolute;
+            top: 300px;
+            left: 750px;
+            margin: 0 auto 2em auto;
+            width: 500px;
+            height: 500px;
+        }
+
+            #gameBoard2 div {
+                position: absolute;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                background: #f6f8f9;
+                border: 1px solid #ddd;
+                width: 50px;
+                height: 50px;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>Battleship</h1>
+
+    <p>Click the board to fire at a ship. Try to sink every battleship!</p>
+    <div id="alpha1">ABCDEFGHI<span>J</span></div>
+    <div id="num1"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10</div>
+    <div id="alpha2">ABCDEFGHI<span>J</span></div>
+    <div id="num2"> 1<br /> 2<br /> 3<br /> 4<br /> 5<br /> 6<br /> 7<br /> 8<br /> 9<br />10</div>
+    <div id="gameBoard1">
+    </div>
+    <!-- <script type="text/javascript" src="/project/templates/battleship.js"> -->
+    <script>
+        var rows = 10;
+        var cols = 10;
+        var squareSize = 50;
+
+        var gameBoard1Container = document.getElementById("gameBoard1");
+
+        for (i = 0; i < cols; i++) {
+            for (j = 0; j < rows; j++) {
+
+                var square = document.createElement("div");
+                gameBoard1Container.appendChild(square);
+
+                square.id = 's' + j + i;
+
+                var topPosition = j * squareSize;
+                var leftPosition = i * squareSize;
+
+                square.style.top = topPosition + 'px';
+                square.style.left = leftPosition + 'px';
+            }
+        }
+
+        var hitCount = 0;
+
+        var gameBoard1 = [
+            [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+
+        gameBoard1Container.addEventListener("click", fireTorpedo, false);
+
+        function fireTorpedo(e) {
+            if (e.target !== e.currentTarget) {
+                var row = e.target.id.substring(1, 2);
+                var col = e.target.id.substring(2, 3);
+
+                if (gameBoard1[row][col] == 0) {
+                    e.target.style.background = '#bbb';
+                    gameBoard1[row][col] = 3;
+
+                } else if (gameBoard1[row][col] == 1) {
+                    e.target.style.background = 'black';
+                    gameBoard1[row][col] = 2;
+
+                    hitCount++;
+                    if (hitCount == 17) {
+                        alert("All enemy battleships have been defeated! Player 1 wins!");
+                    }
+
+                } else if (gameBoard1[row][col] > 1) {
+                    alert("Stop wasting your torpedos! You already fired at this location.");
+                }
+            }
+            e.stopPropagation();
+        }
+    </script>
+    <div id="gameBoard2">
+    </div>
+    <!-- <script type="text/javascript" src="/project/templates/battleship.js"> -->
+    <script>
+        var rows = 10;
+        var cols = 10;
+        var squareSize = 50;
+
+        var gameBoard2Container = document.getElementById("gameBoard2");
+
+        for (i = 0; i < cols; i++) {
+            for (j = 0; j < rows; j++) {
+
+                var square = document.createElement("div");
+                gameBoard2Container.appendChild(square);
+
+                square.id = 's' + j + i;
+
+                var topPosition = j * squareSize;
+                var leftPosition = i * squareSize;
+
+                square.style.top = topPosition + 'px';
+                square.style.left = leftPosition + 'px';
+            }
+        }
+
+        var hitCount = 0;
+
+        var gameBoard2 = [
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+        ]
+
+        gameBoard2Container.addEventListener("click", fireTorp, false);
+
+        function fireTorp(e) {
+            if (e.target !== e.currentTarget) {
+                var row = e.target.id.substring(1, 2);
+                var col = e.target.id.substring(2, 3);
+
+                if (gameBoard2[row][col] == 0) {
+                    e.target.style.background = '#bbb';
+                    gameBoard2[row][col] = 3;
+
+                } else if (gameBoard2[row][col] == 1) {
+                    e.target.style.background = 'red';
+                    gameBoard2[row][col] = 2;
+
+                    hitCount++;
+                    if (hitCount == 17) {
+                        alert("All enemy battleships have been defeated! Player 2 wins!");
+                    }
+
+                } else if (gameBoard2[row][col] > 1) {
+                    alert("Stop wasting your torpedos! You already fired at this location.");
+                }
+            }
+            e.stopPropagation();
+        }</script>
+
+</body>
+</html>
+
+

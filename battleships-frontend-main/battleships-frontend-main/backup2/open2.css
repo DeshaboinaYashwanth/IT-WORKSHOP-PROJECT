@@ -1,0 +1,55 @@
+body {  
+     background-image: url('hqdefault.jpg');  
+
+ background-repeat: no-repeat;
+background-size: 100% 100%;
+}  
+
+h1
+{
+text-color:black;
+text-font:Helvetica;
+font-size:50px;
+text-align:center;
+}
+
+button
+{
+
+background-color: #e7e7e7; 
+  border-color: black;
+height:80px;
+width:500px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+border-radius: 12px;
+transition-duration: 1s;
+onclick:url("window.location.href='layout_grids.html'");
+
+}
+
+#one, #two, #three, #four
+{
+position:absolute;
+left:420px;
+}
+
+#one
+{
+top:180px;
+}
+#two
+{
+top:280px;
+}
+#three
+{
+top:380px;
+}
+#four
+{
+top:480px;
+}
