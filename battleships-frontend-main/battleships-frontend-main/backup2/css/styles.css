@@ -48,7 +48,8 @@ button
 		background-color: #ffffff;
 	}
 
-	button:active {
+	button:active 
+	{
 		background-color: #99C2E1;
 	}
 
@@ -60,18 +61,20 @@ button
 		color: #FFFFFF;
 		background-color: #FF9200;
 	}
-		#start-game:hover,
-		#place-randomly:hover,
-		#restart-game:hover 
-		{
-			background-color: #FFB655;
-		}
-		#start-game:active,
-		#place-randomly:active,
-		#restart-game:active 
-		{
-			background-color: #FFCE8E;
-		}
+
+	#start-game:hover,
+	#place-randomly:hover,
+	#restart-game:hover 
+	{
+		background-color: #FFB655;
+	}
+
+	#start-game:active,
+	#place-randomly:active,
+	#restart-game:active 
+	{
+		background-color: #FFCE8E;
+	}
 
 #prefetch1 
 {
