@@ -15,8 +15,7 @@ text-align:center;
 
 button
 {
-
-background-color: #e7e7e7; 
+opacity:0.5;
   border-color: black;
 height:80px;
 width:500px;
