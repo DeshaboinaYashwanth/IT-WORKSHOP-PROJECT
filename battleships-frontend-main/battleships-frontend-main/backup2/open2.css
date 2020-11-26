@@ -30,20 +30,13 @@ onclick:url("window.location.href='layout_grids.html'");
 
 }
 
-#one, #two, #three, #four
+#three, #four
 {
 position:absolute;
 left:420px;
 }
 
-#one
-{
-top:180px;
-}
-#two
-{
-top:280px;
-}
+
 #three
 {
 top:380px;
