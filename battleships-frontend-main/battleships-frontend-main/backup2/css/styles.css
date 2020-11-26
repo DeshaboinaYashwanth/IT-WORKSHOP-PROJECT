@@ -1,28 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-html, body {
+html, body 
+{
 	width: 100%;
 	padding: 0;
 	margin: 0;
 	background-color: #ddd;
 	min-width: 860px;
 }
-h1, h2, h3, h4, h5, h6, p, li, span {
+
+h1, h2, h3, h4, h5, h6, p, li, span 
+{
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #222222;
 }
-a {
+
+a 
+{
 	color: #222222;
 	font-weight: bold;
 }
-	a:hover {
+
+	a:hover 
+	{
 		text-decoration: none;
 	}
-div {
+
+div 
+{
 	padding: 0;
 	margin: 0;
 }
 
-button {
+button 
+{
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1.2em;
 	color: #EEEEEE;
@@ -32,64 +42,83 @@ button {
 	padding: 10px;
 	border-radius: 5px;
 }
-	button:hover {
+	button:hover 
+	{
 		cursor: pointer;
 		background-color: #ffffff;
 	}
+
 	button:active {
 		background-color: #99C2E1;
 	}
+
 	#start-game,
 	#place-randomly,
-	#restart-game {
+	#restart-game 
+	{
 		position: relative;
 		color: #FFFFFF;
 		background-color: #FF9200;
 	}
 		#start-game:hover,
 		#place-randomly:hover,
-		#restart-game:hover {
+		#restart-game:hover 
+		{
 			background-color: #FFB655;
 		}
 		#start-game:active,
 		#place-randomly:active,
-		#restart-game:active {
+		#restart-game:active 
+		{
 			background-color: #FFCE8E;
 		}
 
-#prefetch1 {
+#prefetch1 
+{
 	background: url('../img/cross-icon.svg');
 }
-#prefetch2 {
+
+#prefetch2 
+{
 	background: url('../img/cross-icon.png');
 }
-#prefetch3 {
+
+#prefetch3 
+{
 	background: url('../img/crosshair.png');
 }
-.prefetch {
+
+.prefetch 
+{
 	background-repeat: no-repeat;
 	background-position: -9999px -9999px;
 }
 
-.tagline {
+.tagline 
+{
 	margin-bottom: 2em;
 }
-	.instructions {
+	.instructions 
+	{
 		width: auto;
 		display: inline-block;
 		text-align: left;
 		margin: 0 auto 3em auto;
 	}
 
-.container {
+.container 
+{
 	width: 870px;
 	text-align: center;
 	margin: 20px auto 100px auto;
 }
-.game-container {
+.game-container 
+{
 	position: relative;
 }
-	#roster-sidebar, #stats-sidebar, #restart-sidebar {
+
+	#roster-sidebar, #stats-sidebar, #restart-sidebar 
+	{
 		width: 150px;
 		padding: 20px;
 		margin: 0;
@@ -100,40 +129,57 @@ button {
 		-moz-border-radius: 5px;
 		border-radius: 5px;
 	}
-	#roster-sidebar, #restart-sidebar {
+
+	#roster-sidebar, #restart-sidebar 
+	{
 		left: -200px;
 	}
-	#stats-sidebar {
+
+	#stats-sidebar 
+	{
 		right: -200px;
 	}
-		#roster-sidebar h2, #stats-sidebar h2, #restart-sidebar h2 {
+
+		#roster-sidebar h2, #stats-sidebar h2, #restart-sidebar h2 
+		{
 			margin: 0 0 1em 0;
 			text-align: center;
 		}
 
-.fleet-roster {
+.fleet-roster 
+{
 	position: relative;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.fleet-roster, button {
+
+.fleet-roster, button 
+{
 	opacity: 1;
 	-webkit-transition: opacity 0.5s ease-out;
 	-o-transition: opacity 0.5s ease-out;
 	transition: opacity 0.5s ease-out;
 }
-	.fleet-roster li {
+
+	.fleet-roster li 
+	{
 		margin: 0.5em 0;
 	}
-		.fleet-roster li:hover {
+
+		.fleet-roster li:hover 
+		{
 			color: #aaa;
 			cursor: pointer;
 		}
-	.fleet-roster .placing {
+
+	.fleet-roster .placing 
+	{
 		font-weight: bold;
 	}
-	.fleet-roster .placed {
+
+	.fleet-roster .placed 
+	{
 		visibility: hidden;
 		font-weight: bold;
 		opacity: 0;
@@ -141,6 +187,7 @@ button {
 		-o-transition: all 0.2s ease-in;
 		transition: all 0.2s ease-in;
 	}
+
 	.invisible {
 		opacity: 0;
 		-webkit-transition: opacity 0.5s ease-in;
