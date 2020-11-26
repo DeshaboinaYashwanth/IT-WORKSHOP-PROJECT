@@ -15,7 +15,7 @@ text-align:center;
 
 button
 {
-opacity:0.5;
+opacity:0.8;
   border-color: black;
 height:80px;
 width:500px;
@@ -24,6 +24,7 @@ width:500px;
   text-decoration: none;
   display: inline-block;
   font-size: 30px;
+  font-style:Century Schoolbook;
 border-radius: 12px;
 transition-duration: 1s;
 onclick:url("window.location.href='layout_grids.html'");
@@ -39,9 +40,9 @@ left:420px;
 
 #three
 {
-top:380px;
+top:240px;
 }
 #four
 {
-top:480px;
+top:360px;
 }
